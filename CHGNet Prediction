@@ -1,14 +1,10 @@
 import numpy as np
 from pymatgen.core import Structure
-
 from chgnet.model import CHGNet
-
-np.set_printoptions(precision=4, suppress=True)
-
 from chgnet.model import StructOptimizer
 
+np.set_printoptions(precision=4, suppress=True)
 structure = Structure.from_file('structure/NVMTP-1.cif')
-
 relaxer = StructOptimizer()
 result = relaxer.relax(structure)
 print("CHGNet relaxed structure", result["final_structure"])
